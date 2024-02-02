@@ -30,7 +30,9 @@
         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
           <li><a class="dropdown-item" href="{% url 'password_change' %}">
               Change password</a></li>
-          <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
+          <li><form action="{% url 'logout' %}" method="post">{% csrf_token %}
+        <button type="submit" class="dropdown-item">Log Out</button>
+          </form></li>
         </ul>
       </div>
       {% else %}
